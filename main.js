@@ -3,12 +3,17 @@ let pokemonCount = 151;
 // {{name: bulbasuar, type:[],}}
 const pokedex = new Map([]);
 
-window.onload = function () {
-  getPokemon(i);
+window.onload = async function () {
+  getPokemon();
 };
 
-function getPokemon() {
+async function getPokemon() {
   let url = "https://pokeapi.co/api/v2/pokemon/1";
+  let response = await fetch(url);
+  let pokemon = await response.json();
+
+  console.log(pokemon);
 }
+getPokemon;
 
 // updateDisplay
