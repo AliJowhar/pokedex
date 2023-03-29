@@ -4,9 +4,15 @@ let pokemonCount = 151;
 const pokedex = {};
 
 window.onload = async function () {
+  let pkmnList = document.getElementById("pkmn-list");
   for (let i = 1; i < pokemonCount; i++) {
     await getPokemon(i);
     // console.log(pokedex[i]);
+    let html = `<li> ${pokedex[i].name} </li>`;
+
+    pkmnList.insertAdjacentHTML("beforeend", html);
+
+    console.log(html);
   }
 
   // console.log(pokedex);
